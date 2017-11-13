@@ -35,9 +35,8 @@ function Enter-ExchangeSession{
     
     Try{
         #Set Session Options. Proxy and 10 Minute TimeOut
-        #$soProxySettings = $($global:proxysettings)
-        $soProxySettings = @($($global:proxysettings),$(New-PSSessionOption -IdleTimeout 600000))
-
+        $soProxySettings = $($global:proxysettings)
+        
         $so = New-PSSessionOption -IdleTimeout 600000
 
         #PowerShell Session URL's
